@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Item from "../Item";
+import ImageFilter from "../ImageFilter";
 
 const Itens = styled.div`
     box-shadow: 4px 4px 20px 0px rgba(0,0,0,0.1);
@@ -16,6 +17,7 @@ const Itens = styled.div`
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({id, type, from, value, date}) => {
     return <Itens>
+        {ImageFilter(type)}
         <Item type={type} from={from} value={value}></Item>
         <span>{date}</span>
     </Itens>;
